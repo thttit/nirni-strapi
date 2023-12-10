@@ -1,0 +1,53 @@
+{
+  "kind": "collectionType",
+  "collectionName": "carts",
+  "info": {
+    "singularName": "cart",
+    "pluralName": "carts",
+    "displayName": "cart"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "text"
+    },
+    "quantity": {
+      "type": "biginteger"
+    },
+    "image": {
+      "type": "string"
+    },
+    "size": {
+      "type": "string"
+    },
+    "categoryId": {
+      "type": "biginteger"
+    },
+    "colour": {
+      "type": "string"
+    },
+    "price": {
+      "type": "biginteger"
+    },
+    "quantities": {
+      "type": "biginteger"
+    },
+    "sizes": {
+      "type": "json"
+    },
+    "productId": {
+      "type": "biginteger"
+    },
+    "userEmail": {
+      "type": "email",
+      "required": true
+    }
+  }
+}
