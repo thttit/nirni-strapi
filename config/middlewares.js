@@ -12,9 +12,19 @@ module.exports = [
           upgradeInsecureRequests: null,
         },
       },
+      // Force HTTPS redirection
+      hsts: {
+        enabled: true,
+        maxAge: 31536000,
+        includeSubDomains: true,
+        preload: true,
+      },
     },
   },
-  "strapi::cors",
+  {
+    name: "strapi::cors",
+    config: {},
+  },
   "strapi::poweredBy",
   "strapi::logger",
   "strapi::query",
