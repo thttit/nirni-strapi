@@ -4,7 +4,8 @@
   "info": {
     "singularName": "cart",
     "pluralName": "carts",
-    "displayName": "cart"
+    "displayName": "cart",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -44,10 +45,6 @@
     },
     "productId": {
       "type": "biginteger"
-    },
-    "userEmail": {
-      "type": "email",
-      "required": true
     }
   }
 }
