@@ -24,7 +24,6 @@ module.exports = createCoreController("api::order.order", ({ strapi }) => ({
     }
   },
   async findOne(ctx) {
-    console.log("check params", ctx.params);
     const { id } = ctx.params;
     try {
       const order = await strapi.db.query("api::order.order").findOne({

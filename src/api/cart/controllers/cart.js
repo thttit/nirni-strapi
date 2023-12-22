@@ -10,8 +10,9 @@ module.exports = createCoreController("api::cart.cart", ({ strapi }) => ({
   async find(ctx) {
     try {
       const { email } = ctx.state.user;
+      const { id } = ctx.params;
       const data = await strapi.db.query("api::cart.cart").findMany({
-        where: { userEmail: email },
+        where: { id },
       });
       return { data };
     } catch (error) {
@@ -22,11 +23,12 @@ module.exports = createCoreController("api::cart.cart", ({ strapi }) => ({
   async create(ctx) {
     try {
       const { email } = ctx.state.user;
+      const { id } = ctx.params;
       const res = await strapi.service("api::cart.cart").create({
         data: {
           // @ts-ignore
           ...ctx.request.body.data,
-          userEmail: email,
+          // userEmail: email,
         },
       });
       return res;
