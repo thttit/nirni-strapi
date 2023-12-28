@@ -23,7 +23,10 @@ module.exports = [
   },
   {
     name: "strapi::cors",
-    config: {},
+    config: {
+      // methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+      // headers: ["sessionID", "Authorization"],
+    },
   },
   "strapi::poweredBy",
   "strapi::logger",

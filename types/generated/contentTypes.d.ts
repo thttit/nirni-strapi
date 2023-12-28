@@ -744,6 +744,8 @@ export interface ApiCartCart extends Schema.CollectionType {
     quantities: Attribute.BigInteger;
     sizes: Attribute.JSON;
     productId: Attribute.BigInteger;
+    userEmail: Attribute.Email & Attribute.Required;
+    sessionID: Attribute.Text;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

@@ -45,6 +45,14 @@
     },
     "productId": {
       "type": "biginteger"
+    },
+    "userEmail": {
+      "type": "email",
+      "required": true
+    },
+    "sessionID": {
+      "type": "text",
+      "required": false
     }
   }
 }

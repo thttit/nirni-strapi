@@ -13,14 +13,17 @@
     "@strapi/plugin-cloud": "4.15.5",
     "@strapi/plugin-i18n": "4.15.5",
     "@strapi/plugin-users-permissions": "4.15.5",
+    "@strapi/provider-upload-aws-s3": "^4.16.2",
     "@strapi/provider-upload-cloudinary": "^4.15.5",
     "@strapi/strapi": "4.15.5",
-    "pg": "8.8.0",
+    "pg": "^8.8.0",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
     "react-router-dom": "5.3.4",
     "strapi-google-auth": "^0.2.1",
-    "styled-components": "5.3.3"
+    "styled-components": "5.3.3",
+    "uuid": "^9.0.1",
+    "uuidv4": "^6.2.13"
   },
   "author": {
     "name": "A Strapi developer"
