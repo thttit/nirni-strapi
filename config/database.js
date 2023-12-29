@@ -9,7 +9,7 @@ module.exports = ({ env }) => ({
         "nirni-database.cbyiukdfzhok.ap-southeast-1.rds.amazonaws.com"
       ),
       port: env.int("DATABASE_PORT", 5432),
-      database: env("DATABASE_NAME", "nirni-database"),
+      database: env("DATABASE_NAME", ""),
       user: env("DATABASE_USERNAME", "postgres"),
       password: env("DATABASE_PASSWORD", "nirnishop000"),
       ssl: {
