@@ -12,7 +12,9 @@ module.exports = ({ env }) => ({
       database: env("DATABASE_NAME", "nirni-database"),
       user: env("DATABASE_USERNAME", "postgres"),
       password: env("DATABASE_PASSWORD", "nirnishop000"),
-      ssl: true,
+      ssl: {
+        rejectUnauthorized: false, // Add this line to allow self-signed certificates
+      },
     },
     // connection: {
     //   host: env(
