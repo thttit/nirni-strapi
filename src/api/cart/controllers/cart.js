@@ -8,39 +8,36 @@ const { uuid } = require("uuidv4");
 
 module.exports = createCoreController("api::cart.cart", ({ strapi }) => ({
   async find(ctx) {
-    console.log("check sessionID", ctx.request.headers["sessionid"]);
-    let sessionid = ctx.request.headers["sessionid"] || "";
+    // let sessionid = ctx.request.headers["sessionid"];
+    const { email } = ctx.state.user || {};
+    // console.log("check email", email);
     try {
-      const { email } = ctx.state.user || "";
-      console.log(
-        "SQL query:",
-        await strapi.db.query("api::cart.cart").findMany({
-          where: {
-            $or: [
-              {
-                userEmail: email,
-              },
-              {
-                sessionID: sessionid,
-              },
-            ],
-          },
-        })
-      );
-      const data = await strapi.db.query("api::cart.cart").findMany({
-        where: {
-          // userEmail: email,
-          $or: [
-            {
-              userEmail: email,
-            },
-            {
-              sessionID: sessionid,
-            },
-          ],
-        },
-      });
+      const data = await strapi.db
+        .query("api::cart.cart")
+        .findMany({ where: { userEmail: email } });
+
       return { data };
+      // if (email) {
+      //   data = await strapi.db.query("api::cart.cart").findMany({
+      //     where: { userEmail: email },
+      //   });
+      // } else if (sessionid) {
+      //   data = await strapi.db.query("api::cart.cart").findMany({
+      //     where: { sessionID: sessionid },
+      //   });
+      // }
+      // //   where: {
+      // //     $or: [
+      // //       {
+      // //         userEmail: email,
+      // //       },
+      // //       {
+      // //         sessionID: sessionid,
+      // //       },
+      // //     ],
+      // //   },
+      // // });
+      // return { data };
       // Access sessionID from query parameter or headers
       // const cachedData = cachedCarts.get(cartIdentifier);
       // if (cachedData) {
@@ -58,14 +55,15 @@ module.exports = createCoreController("api::cart.cart", ({ strapi }) => ({
     }
   },
   async create(ctx) {
+    let { email } = ctx.state.user || {};
+    // let sessionid = ctx.request.headers["sessionid"];
+    // console.log("check session", sessionid);
     try {
-      const { email } = ctx.state.user || "";
-
       const res = await strapi.service("api::cart.cart").create({
         data: {
           // @ts-ignore
           ...ctx.request.body.data,
-          userEmail: email, // Assign email if user is logged in
+          userEmail: email,
         },
       });
       return res;

@@ -24,8 +24,21 @@ module.exports = [
   {
     name: "strapi::cors",
     config: {
-      // methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
-      // headers: ["sessionID", "Authorization"],
+      origin: [
+        "http://47.128.148.60:1337",
+        "http://localhost:3000",
+        "https://nirniofficial.com",
+        "http://localhost:1337",
+      ],
+      methods: ["GET", "POST", "PUT", "PATCH", "DELETE", "HEAD", "OPTIONS"],
+      headers: [
+        "Content-Type",
+        "Authorization",
+        "Origin",
+        "Accept",
+        "sessionid",
+      ],
+      keepHeaderOnError: true,
     },
   },
   "strapi::poweredBy",

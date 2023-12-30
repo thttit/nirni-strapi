@@ -48,7 +48,7 @@
     },
     "userEmail": {
       "type": "email",
-      "required": true
+      "required": false
     },
     "sessionID": {
       "type": "text",
