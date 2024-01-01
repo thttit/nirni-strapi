@@ -29,6 +29,7 @@ module.exports = [
         "http://localhost:3000",
         "https://nirniofficial.com",
         "http://localhost:1337",
+        "https://nirnioffice.com",
       ],
       methods: ["GET", "POST", "PUT", "PATCH", "DELETE", "HEAD", "OPTIONS"],
       headers: [
