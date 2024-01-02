@@ -25,11 +25,11 @@ module.exports = [
     name: "strapi::cors",
     config: {
       origin: [
-        "http://47.128.148.60:1337",
         "http://localhost:3000",
         "https://nirniofficial.com",
         "http://localhost:1337",
         "https://nirnioffice.com",
+        "http://18.143.180.125:1337",
       ],
       methods: ["GET", "POST", "PUT", "PATCH", "DELETE", "HEAD", "OPTIONS"],
       headers: [
