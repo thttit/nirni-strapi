@@ -6,15 +6,15 @@ module.exports = ({ env }) => ({
     keys: env.array("APP_KEYS"),
   },
   webhooks: {
-    populateRelations: env.bool("WEBHOOKS_POPULATE_RELATIONS", true),
+    populateRelations: env.bool("WEBHOOKS_POPULATE_RELATIONS", false),
   },
-  server: {
-    ssl: {
-      enabled: false,
-      redirectHttpFromPort: 80,
-      httpPort: 1337,
-      cert: env("SSL_CERT", ""),
-      key: env("SSL_KEY", ""),
-    },
-  },
+  // server: {
+  //   ssl: {
+  //     enabled: true,
+  //     redirectHttpFromPort: 80,
+  //     httpPort: 1337,
+  //     cert: env("SSL_CERT", ""),
+  //     key: env("SSL_KEY", ""),
+  //   },
+  // },
 });

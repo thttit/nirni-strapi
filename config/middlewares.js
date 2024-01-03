@@ -30,7 +30,7 @@ module.exports = [
         "http://localhost:1337",
         "https://nirnioffice.com",
         "http://18.143.180.125:1337",
-        "https://nirni-store.onrender.com/",
+        "https://nirni-store.onrender.com",
       ],
       methods: ["GET", "POST", "PUT", "PATCH", "DELETE", "HEAD", "OPTIONS"],
       headers: [
