@@ -28,8 +28,8 @@ module.exports = [
         "http://localhost:3000",
         "https://nirniofficial.com",
         "http://localhost:1337",
-        "https://nirnioffice.com",
-        "http://18.143.180.125:1337",
+        // "https://nirnioffice.com",
+        // "http://18.143.180.125:1337",
         "https://nirni-store.onrender.com",
       ],
       methods: ["GET", "POST", "PUT", "PATCH", "DELETE", "HEAD", "OPTIONS"],
@@ -50,5 +50,4 @@ module.exports = [
   "strapi::session",
   "strapi::favicon",
   "strapi::public",
-  { resolve: "./src/middlewares/admin-redirect" },
 ];
