@@ -1,7 +1,7 @@
 module.exports = ({ env }) => ({
   host: env("HOST", "0.0.0.0"),
   port: env.int("PORT", 1337),
-  // url: "https://nirnioffice.com",
+  url: "https://nirnioffice.com",
   app: {
     keys: env.array("APP_KEYS"),
   },
@@ -10,7 +10,7 @@ module.exports = ({ env }) => ({
   },
   server: {
     ssl: {
-      enabled: true,
+      enabled: false,
       redirectHttpFromPort: 80,
       httpPort: 1337,
       cert: env("SSL_CERT", ""),
